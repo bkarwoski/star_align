@@ -33,3 +33,5 @@
 
 #Project-Specific
 deps/
+build/
+.vscode/
