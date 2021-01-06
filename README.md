@@ -37,7 +37,7 @@ cd build
 sudo apt install libgtk2.0-dev pkg-config ffmpeg libpng-dev -y
 ```
 ```Bash
-cmake -DCMAKE_INSTALL_PREFIX=/home/${USER}/star-align/deps/install -DCMAKE_PREFIX_PATH=/home/${USER}/star_align/deps/install -DOPENCV_EXTRA_MODULES_PATH=/home/${USER}/star_align/deps/opencv_contrib/modules -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_EXAMPLES=OFF -DBUILD_DOC=OFF -DOPENCV_ENABLE_NONFREE=ON ..
+cmake -DCMAKE_INSTALL_PREFIX=/home/${USER}/star_align/deps/install -DCMAKE_PREFIX_PATH=/home/${USER}/star_align/deps/install -DOPENCV_EXTRA_MODULES_PATH=/home/${USER}/star_align/deps/opencv_contrib/modules -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_EXAMPLES=OFF -DBUILD_DOC=OFF -DOPENCV_ENABLE_NONFREE=ON -DBUILD_opencv_dnn=ON..
 
 make install -j
 ```

@@ -4,9 +4,9 @@ project(
     DESCRIPTION "Star photo alignment"
     LANGUAGES CXX)
 
-
+MESSAGE("-- Compiler ID: ${CMAKE_CXX_COMPILER_ID} Version: ${CMAKE_CXX_COMPILER_VERSION}")
 if(NOT CMAKE_BUILD_TYPE)
-    MESSAGE("-- No build type specified; defaulting to CMAKE_BUILD_TYPE=Release")
+    MESSAGE("\n-- No build type specified; defaulting to CMAKE_BUILD_TYPE=Release")
     set(CMAKE_BUILD_TYPE Release CACHE STRING
     "Choose the type of build, options are: Debug Release"  FORCE)
     else()
@@ -25,21 +25,20 @@ add_definitions("-std=c++17")
 include_directories(${PROJECT_SOURCE_DIR})
 message("\n -- Project source dir: ${PROJECT_SOURCE_DIR}")
 
-include_directories("/home/bkarwoski/star_align/deps/install/include/eigen3")
-message("\n -- Found Eigen Version: ${Eigen_VERSION}")
-message("\n -- Eigen_INCLUDE_DIRS: ${EIGEN_INCLUDE_DIRS}")
+# include_directories("/home/bkarwoski/star_align/deps/install/include/eigen3")
 
 set(OpenCV_DIR "/home/bkarwoski/star_align/deps/install/share/OpenCV")
-find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui calib3d tracking)
+find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui calib3d video)
 include_directories(${OpenCV_INCLUDE_DIRS}) # not needed for opencv>=4.0
 message(STATUS "OpenCV library status:")
 message(STATUS "    version: ${OpenCV_VERSION}")
 message(STATUS "    libraries: ${OpenCV_LIBS}")
 message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 
-# set(Ceres_DIR "/home/bkarwoski/star_align/deps/install/include/ceres")
+set(Ceres_DIR "/home/bkarwoski/star_align/deps/install/include/ceres")
 find_package(Ceres REQUIRED)
 
+link_libraries(stdc++fs)
 add_executable(main main.cpp)
 target_include_directories(main PRIVATE ${OpenCV_INCLUDE_DIRS} ${CERES_INCLUDES})
 target_link_libraries(main ${OpenCV_LIBS} ${CERES_LIBRARIES})
