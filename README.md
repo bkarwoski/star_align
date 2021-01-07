@@ -13,7 +13,7 @@ mkdir deps
 cd deps
 ```
 
-### Eigen
+## Eigen
 ```Bash
 git clone https://gitlab.com/libeigen/eigen.git
 mkdir build
@@ -22,7 +22,7 @@ cmake -DCMAKE_INSTALL_PREFIX=/home/${USER}/star_align/deps/install -DCMAKE_BUILD
 make install
 ```
 
-### OpenCV
+## OpenCV
 ```Bash
 cd ~/star_align/deps
 git clone git@github.com:opencv/opencv_contrib.git
@@ -43,7 +43,7 @@ make install -j
 ```
 Note: I ran into [this issue](https://github.com/opencv/opencv/issues/7636) when running make with multiple threads. If your build fails, try removing the `-j` option.
 
-### Ceres
+## Ceres
 Download from here: https://github.com/ceres-solver/ceres-solver/archive/1.14.0.tar.gz
 
 Download and extract to `~/star_align/deps/`
@@ -55,7 +55,10 @@ cmake -DCMAKE_INSTALL_PREFIX=/home/${USER}/star_align/deps/install -DCMAKE_PREFI
 make install -j
 ```
 
-### star_align
+## nlohmann/json
+Download the [single header `json.hpp` file](https://raw.githubusercontent.com/nlohmann/json/develop/single_include/nlohmann/json.hpp) from [nlohmann/json](https://github.com/nlohmann/json), and place it in the `deps` directory.
+
+## star_align
 ```Bash
 cd ~/star_align
 mkdir build

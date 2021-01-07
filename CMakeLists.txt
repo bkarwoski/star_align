@@ -38,8 +38,11 @@ message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 set(Ceres_DIR "/home/bkarwoski/star_align/deps/install/include/ceres")
 find_package(Ceres REQUIRED)
 
+# set(nlohmann_json_DIR "/home/blake/star_align/deps/include/single_include/nlohmann")
+# find_package(nlohmann_json REQUIRED)
+
 link_libraries(stdc++fs)
-add_executable(main main.cpp)
+add_executable(main main.cpp util.cpp)
 target_include_directories(main PRIVATE ${OpenCV_INCLUDE_DIRS} ${CERES_INCLUDES})
 target_link_libraries(main ${OpenCV_LIBS} ${CERES_LIBRARIES})
 
