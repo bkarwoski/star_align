@@ -1,9 +1,11 @@
 # star_align
 Using OpenCV to align star exposures.
 
+![Milky Way Galactic Core](./media/milky_way.jpg)
+*Composition of 64 images, Sony A7ii, 50mm F/1.8, 3200 ISO, 5 second exposures. Edited in Adobe Lightroom.*
 # Setup Instructions
 
-Tested on Ubuntu 16.04.
+Tested on Ubuntu 18.04.
 
 ## Setup Dependencies
 
@@ -43,7 +45,7 @@ make install -j
 ```
 Note: I ran into [this issue](https://github.com/opencv/opencv/issues/7636) when running make with multiple threads. If your build fails, try removing the `-j` option.
 
-## Ceres
+## Ceres (Not used in current version, may change in the future)
 Download from here: https://github.com/ceres-solver/ceres-solver/archive/1.14.0.tar.gz
 
 Download and extract to `~/star_align/deps/`
