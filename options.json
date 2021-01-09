@@ -3,5 +3,7 @@
   "crop_x": 0,
   "crop_y": 0,
   "crop_width": 6000,
-  "crop_height": 3000
+  "crop_height": 3000,
+  "image_count": 64,
+  "normalization_multiplier": 4.0
 }

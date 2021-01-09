@@ -38,3 +38,17 @@ std::string type2str(int type) {
 
   return r;
 }
+
+cv::Mat loadImage(std::string img_path, const nlohmann::json &options,
+                  const int &flags) {
+  cv::Mat image = cv::imread(img_path, flags);
+  if (!image.data) {
+    std::cerr << "could not open the image file" << img_path << std::endl;
+    return image;
+  }
+  if (options["crop"]) {
+    image = image(cv::Rect(options["crop_x"], options["crop_y"],
+                           options["crop_width"], options["crop_height"]));
+  }
+  return image;
+}
