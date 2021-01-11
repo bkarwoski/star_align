@@ -1,9 +1,9 @@
 # star_align
-Using OpenCV to align star exposures.
+Using OpenCV to align star exposures in C++.
 
 ![Milky Way Galactic Core](./media/milky_way.jpg)
 *Composition of 64 images, Sony A7ii, 50mm F/1.8, 3200 ISO, 5 second exposures. Edited in Adobe Lightroom.*
-# Setup Instructions
+# Build Instructions
 
 Tested on Ubuntu 18.04.
 
